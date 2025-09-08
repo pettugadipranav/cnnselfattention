@@ -15,6 +15,8 @@ def main():
 
     train_model(model, train_loader, optimizer, criterion, device, epochs=20)
     evaluate_model(model, test_loader, criterion, device)
+    MODEL_PATH = "runs/cifar10_cnn_attention.pth"
+    torch.save(model.state_dict(), MODEL_PATH)
 
 if __name__ == "__main__":
     main()
